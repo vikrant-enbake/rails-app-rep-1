@@ -1,0 +1,16 @@
+<p>Welcome ShowIMG</p>
+
+ <% if user_signed_in? %>
+      <%= link_to 'edit' , edit_user_registration_path %> 
+  
+
+    
+  <% else %>
+  	<p>you are not logged in please login here </p>
+  	<%= link_to 'login', user_session_path %>
+
+  	<span> or sign up here </span> 
+
+  	<%= link_to 'sign up', new_user_registration_path %>
+ <% end %>
+

@@ -1,0 +1,59 @@
+<p>here all albums </p>
+
+<div class="table-responsive">
+<% if @user.album.count==0 %>
+	<h1>Sorry no Album to Show</h1>
+<% else %>
+
+<table class="table table-hover table-bordered">
+	<tr class="bg-white">
+		<th>
+			<p>#</p>
+		</th>
+		<th>
+			<p>ID</p>
+		</th>
+		<th>
+			<p>album name</p>
+		</th>
+		<th>
+			<p> description</p>
+		</th>
+		<th>
+			<p>actionc </p>
+		</th>
+		<th>
+			<p>images</p>
+		</th>
+
+	</tr>
+
+	
+	<% @user.album.each do |album|%>
+
+	<tr>
+		<td >
+			<%= '=>' %>
+		</td>
+		<td>
+			<p><%= album.id %></p>
+		</td>
+		<td>
+			<p><%= album.name %></p>
+		</td>
+		<td>
+			<p><%= album.description %></p></p>
+		</td>
+		<td>
+			<p><%=link_to 'edit',edit_album_path(album) %>/<%=link_to 'delete', album_path(album), :method => :delete %></p>
+		</td>
+		<td>
+			<p><%= album.pics.count %>/<%=link_to 'view',album_path(album) %></p></p>
+		</td>
+	</tr>
+	<% end %>
+</table>
+<%= tag "input", { "type" => "button", "value" => "delet all", "onclick"=> "albdelt()" } %>
+<% end %>
+</div>
+

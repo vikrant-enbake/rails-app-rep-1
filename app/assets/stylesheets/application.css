@@ -1,0 +1,102 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require bootstrap_and_overrides
+ */
+
+ .padding-15 
+ {
+ 	padding: 15px;
+ }
+
+#body-bg-image 
+{
+	background: transparent url("backgrounds/main-background.jpg") repeat fixed 0% 0% / 100% 100%;
+}
+
+.navbar-default 
+{
+	background: transparent;
+}
+
+ul.top-nav-custom > li 
+{
+border: 1px solid transparent;	
+}
+ul.top-nav-custom > li.active,ul.top-nav-custom > li:hover
+{
+	background-color: rgba(255, 255, 255, 0.2);
+ 	background: transparent url("button-bg/transparent-bg.png") repeat scroll 0px 0px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+
+}
+ul.top-nav-custom > li.active.active > a
+{
+	background: transparent;
+}
+
+.navbar-default  ul.navbar-nav.top-nav-custom  li > a 
+{
+	color: #E8F2F3;
+}
+
+.navbar-default .navbar-brand 
+{
+	color: #E8F2F3;
+}
+.container 
+{
+	/background: white;
+}
+#body-bg-image 
+{
+	color: #E8F2F3;
+}
+#body-bg-image .well
+{
+	background: #7FD9E4 ;
+	border: 1px solid #08DCF8;
+	color: #fff;
+}
+.color-black 
+{
+	color: #4D4545;
+}
+.navbar-default .navbar-collapse
+{
+	margin-top: 5px;
+}
+
+.table-hover > tbody > tr:hover
+{
+	color: #27A9B3;
+}
+.bg-white 
+{
+	background: #fff;
+	color: #27A9B3;
+}
+input 
+{
+	color: #5F4A4A;
+}
+input:read-only {
+    background-color: yellow;
+} 
+
+.bg-shadow
+{
+box-shadow: 0px 0px 4px 0px rgb(49, 82, 115);
+border-radius: 4px;
+}
