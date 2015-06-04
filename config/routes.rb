@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   
   #resources :users do
   resources :albums 
-    resources :pics 
+  resources :pics 
   resources :tests 
 #end
 

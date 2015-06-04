@@ -2,10 +2,11 @@ class AlbumsController < ApplicationController
 	def index
 		
 		@user = current_user
+		@albums = @user.albums.page(params[:page]).per(7)
 		
 	end
 	def new
-		@album = current_user.album.new
+		@album = current_user.albums.new
 		@user = current_user
 	    
 	    @pics = @album.pics.new
@@ -18,7 +19,7 @@ class AlbumsController < ApplicationController
 	end
 	def create 
 		
-		@album=current_user.album.new(album_params)
+		@album=current_user.albums.new(album_params)
 		
 
 		if @album.save
@@ -39,7 +40,7 @@ class AlbumsController < ApplicationController
 	end
 
 	def update
-	  @album =current_user.album.find(params[:id])
+	  @album =current_user.albums.find(params[:id])
 	  if @album.update(album_params)
 	    redirect_to @album
 	  else
@@ -49,6 +50,7 @@ class AlbumsController < ApplicationController
 
 	def destroy 
 		@album=Album.find(params[:id])
+		flash[:notice] = "album  #{@album.name}, id #{params[:id]} deleted succesfully"
 		@album.destroy
 		redirect_to albums_path
 	end
