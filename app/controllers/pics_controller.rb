@@ -7,8 +7,7 @@ class PicsController < ApplicationController
 
 	end
 	def create
-		debugger
-		@pic= Pic.new(params.require(:pics).permit(:name,:desc,:album_id, :avatar))	
+		@pic= Pic.new(params.require(:pic).permit(:name,:desc,:album_id, :avatar))	
 		@pic.save
 		redirect_to album_path(session[:current_album_id])
 	end

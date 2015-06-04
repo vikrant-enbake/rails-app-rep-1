@@ -1,6 +1,7 @@
 <p>created album</p>
-<table>
-	<tr>
+<div class="table-responsive">
+<table class="table table-hover table-bordered">
+	<tr class="bg-white">
 		<th>
 			<p>name</p>
 		</th>
@@ -10,8 +11,9 @@
 		<th>
 			<p>Pics</p>
 		</th>
-		<th></th>
-		<th></th>
+		<th>
+			<p>Actions</p>
+		</th>
 	</tr>
 	<tr>
 
@@ -28,17 +30,20 @@
 			 <% end %>
 		</td>
 		<td>
-			<p><%=link_to 'view',album_path(@album) %>/<%=link_to 'edit',edit_album_path(@album) %>/<%=link_to 'delete', album_path(@album), :method => :delete %></p>
+			<div class="btn-group">
+				<%=link_to 'view',album_path(@album) , :class => 'btn btn-primary'%>
+				<%=link_to 'edit',edit_album_path(@album) , :class => 'btn btn-success'%>
+				<%=link_to 'delete', album_path(@album), :method => :delete , :class => 'btn btn-danger' %>
+				<%= link_to "Add pic", new_pic_path, :class => 'btn btn-primary' %>
+			</div>
 		</td>
 	</tr>
 </table>
-<p>create new album      <%= link_to "new", new_album_path %> </p>
-<p>show all albums      <%= link_to "show", albums_path %> </p>
-<p>Go Home      <%= link_to "SafeHome", root_path %> </p>
+</div>
+
 <p>Upload pics <%= link_to "Upload", new_pic_path %> </p>
 
-<p>you are logged in as <%= current_user.email %>
-<%= link_to "Sign out", destroy_user_session_path, :method => :delete %> </p>
+
 
 
 

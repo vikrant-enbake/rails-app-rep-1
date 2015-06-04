@@ -1,7 +1,7 @@
 <p>here all albums </p>
 
 <div class="table-responsive">
-<% if @user.album.count==0 %>
+<% if @albums.count==0 %>
 	<h1>Sorry no Album to Show</h1>
 <% else %>
 
@@ -29,7 +29,7 @@
 	</tr>
 
 	
-	<% @user.album.each do |album|%>
+	<% @albums.each do |album|%>
 
 	<tr>
 		<td >
@@ -45,10 +45,10 @@
 			<p><%= album.description %></p></p>
 		</td>
 		<td>
-			<p><%=link_to 'edit',edit_album_path(album) %>/<%=link_to 'delete', album_path(album), :method => :delete %></p>
+			<div class="btn-group"><%=link_to 'view',album_path(album) , :class => 'btn btn-primary'%><%=link_to 'edit',edit_album_path(album) , :class => 'btn btn-success'%> <%=link_to 'delete', album_path(album), :method => :delete , :class => 'btn btn-danger' %></div>
 		</td>
 		<td>
-			<p><%= album.pics.count %>/<%=link_to 'view',album_path(album) %></p></p>
+			<p><%= album.pics.count %></p>
 		</td>
 	</tr>
 	<% end %>

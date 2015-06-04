@@ -20,14 +20,17 @@
 
 
 
+
   	function add() {
 
-		var no = $("#pic p").length
-		$('#pic').append('<p id="'+no+'"><label for="album_pics_attributes_' + no + '_name">Name</label><input name="album[pics_attributes]['+no+'][name]" id="album_pics_attributes_' + no + '_name" type="text"><input name="album[pics_attributes]['+ no + '][avatar]" id="album_pics_attributes_' + no + '_avatar" type="file"><label for="album_pics_attributes_'+no+'_tags_attributes_0_tag_name">Tag name</label> <input name="album[pics_attributes]'+no+'[tags_attributes][0][name]" id="album_pics_attributes_'+no+'_tags_attributes_0_name" type="text"> </p>')   
+		var no = $("#pic > div").length
+		$('#pic').append('<div class="form-group"></br><label class="sr-only" for="album_pics_attributes_'+no+'_name">Name</label> <input class="form-control" placeholder="Pic name" name="album[pics_attributes]['+no+'][name]" id="album_pics_attributes_'+no+'_name" type="text"><input name="album[pics_attributes]['+no+'][avatar]" id="album_pics_attributes_'+no+'_avatar" type="file"><label class="sr-only" for="album_pics_attributes_'+no+'_tags_attributes_0_tag_name">Tag name</label><div class="input-group"><div class="input-group-addon">#</div><input class="form-control" placeholder="Tags for pic " name="album[pics_attributes]['+no+'][tags_attributes][0][name]" id="album_pics_attributes_'+no+'_tags_attributes_0_name" type="text"></div></div>')   
 	}	
 
 	function remov() {
-		$('#pic p:last').remove();
+		$('#pic > div:last').remove();
 	}
+
+	
 
 	

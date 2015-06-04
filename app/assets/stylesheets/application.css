@@ -90,6 +90,8 @@ ul.top-nav-custom > li.active.active > a
 input 
 {
 	color: #5F4A4A;
+	/background: #fff;
+	/border-radius: 3px;
 }
 input:read-only {
     background-color: yellow;
