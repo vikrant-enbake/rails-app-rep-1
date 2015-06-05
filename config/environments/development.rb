@@ -52,7 +52,7 @@ domain: "gmail.com",
 authentication: "plain",
 enable_starttls_auto: true,
 user_name: "vikrant.rise@gmail.com",
-password: "gauravvsv1@1"
+password: "!@#@!"
 }
 
 end
